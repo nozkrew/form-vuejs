@@ -7,9 +7,10 @@
                 <h2>{{acutalQuestion}}</h2>
 
                 <b-form-radio v-for="choice in acutalChoices" :key="choice.value" v-model="form.selected[index]" :value="choice.value">{{choice.text}}</b-form-radio>
-
-                <b-button v-show="index > 0" type="buttton" variant="primary" @click.prevent="previousQuestion">Précedent</b-button>
-                <b-button v-show="!end" :disabled="typeof form.selected[index] === 'undefined' || form.selected[index] === null" type="buttton" variant="primary" @click.prevent="nextQuestion">Suivant</b-button>                
+                <div class="mt-4">
+                    <b-button v-show="index > 0" type="buttton" variant="outline-primary" @click.prevent="previousQuestion">Précedent</b-button>
+                    <b-button v-show="!end" :disabled="typeof form.selected[index] === 'undefined' || form.selected[index] === null" type="buttton" variant="primary" @click.prevent="nextQuestion">Suivant</b-button>                
+                </div>
             </div>
              <!-- Si on est à la fin -->
             <div v-else>
@@ -31,8 +32,10 @@
                     ></b-form-input>
                 </b-form-group>
                 <b-alert :show=error variant="danger">{{messageError}}</b-alert>
-                <b-button type="buttton" variant="primary" @click.prevent="previousQuestion">Précedent</b-button>
-                <b-button type="submit" variant="primary">Voir</b-button>
+                <div class="mt-4">
+                    <b-button type="buttton" variant="outline-primary" @click.prevent="previousQuestion">Précedent</b-button>
+                    <b-button type="submit" variant="primary">Découvrir mon expérience</b-button>
+                </div>
             </div>
         </b-form>
     </div>
