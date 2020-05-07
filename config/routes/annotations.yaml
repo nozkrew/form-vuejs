@@ -3,8 +3,17 @@ api_platform:
     type: api_platform
     prefix: /api
 
-controllers:
-    resource: ../../src/Controller/
+easy_admin_bundle:
+    resource: '@EasyAdminBundle/Controller/EasyAdminController.php'
+    prefix: /admin
+    type: annotation
+    
+security_controller:
+    resource: '../../src/Controller/SecurityController.php'
+    type: annotation
+
+default_controller:
+    resource: '../../src/Controller/DefaultController.php'
     type: annotation
 
 kernel:

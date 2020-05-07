@@ -50,6 +50,11 @@ class Choice
         $this->answers = new ArrayCollection();
     }
 
+    public function __toString():string
+    {
+        return (string) $this->value;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

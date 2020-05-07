@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "api-platform/api-pack": "^1.2",
+        "easycorp/easyadmin-bundle": "^2.3",
         "sendinblue/api-v3-sdk": "^6.1.0",
         "sensio/framework-extra-bundle": "^5.5",
         "symfony/console": "5.0.*",
@@ -15,6 +16,7 @@
         "symfony/maker-bundle": "^1.15",
         "symfony/messenger": "5.0.*",
         "symfony/orm-pack": "^1.0",
+        "symfony/security-bundle": "5.0.*",
         "symfony/twig-pack": "^1.0",
         "symfony/webpack-encore-bundle": "^1.7",
         "symfony/yaml": "5.0.*"

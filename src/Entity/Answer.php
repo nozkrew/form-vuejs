@@ -59,6 +59,11 @@ class Answer
         $this->answers = new ArrayCollection();
     }
 
+    public function __toString():string
+    {
+        return "Réponses de ".$this->participant->getFirstname();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -1,0 +1,25 @@
+easy_admin:
+    design:
+        menu:
+            - { route: 'default', label: 'Retourner sur le quiz', icon: 'home' }
+            - { entity: 'Question', label: 'Questions' }
+            - { entity: 'Choice', label: 'Choix possibles' }
+            - { entity: 'Answer', label: 'Réponses données' }
+            - { entity: 'ChoiceValue', label: 'Réponses possibles' }
+            - { entity: 'Participant', label: 'Participants' }
+    entities:
+        Participant:
+            class: 'App\Entity\Participant'
+        Choice:
+            class: 'App\Entity\Choice'
+            form:
+                fields:
+                    - choice
+                    - question
+                    - value
+        Question:
+            class: 'App\Entity\Question'
+        ChoiceValue:
+            class: 'App\Entity\ChoiceValue'
+        Answer:
+            class: 'App\Entity\Answer'
