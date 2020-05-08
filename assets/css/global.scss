@@ -3,10 +3,6 @@ $primary: #ffcc05;
 $body-color: white;
 $font-size-base:1.2rem;
 
-
-
-
-
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-vue/src/index.scss";

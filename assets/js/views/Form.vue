@@ -8,12 +8,13 @@
 
                 <b-form-radio v-for="choice in acutalChoices" :key="choice.value" v-model="form.selected[index]" :value="choice.value">{{choice.text}}</b-form-radio>
                 <div class="mt-4">
-                    <b-button v-show="index > 0" type="buttton" variant="outline-primary" @click.prevent="previousQuestion">Précedent</b-button>
-                    <b-button v-show="!end" :disabled="typeof form.selected[index] === 'undefined' || form.selected[index] === null" type="buttton" variant="primary" @click.prevent="nextQuestion">Suivant</b-button>                
+                    <b-button v-show="index > 0" class="mb-2" type="buttton" variant="outline-primary" @click.prevent="previousQuestion">Précedent</b-button>
+                    <b-button v-show="!end" class="mb-2" :disabled="typeof form.selected[index] === 'undefined' || form.selected[index] === null" type="buttton" variant="primary" @click.prevent="nextQuestion">Suivant</b-button>                
                 </div>
             </div>
              <!-- Si on est à la fin -->
             <div v-else>
+                <h1>Plus qu'une étape avant de découvrir ton expérience insolite et responsable</h1>
                 <b-form-group label="Ton prénom" label-for="prenom">
                     <b-form-input
                     id="prenom"
@@ -33,8 +34,8 @@
                 </b-form-group>
                 <b-alert :show=error variant="danger">{{messageError}}</b-alert>
                 <div class="mt-4">
-                    <b-button type="buttton" variant="outline-primary" @click.prevent="previousQuestion">Précedent</b-button>
-                    <b-button type="submit" variant="primary">Découvrir mon expérience</b-button>
+                    <b-button type="buttton" class="mb-2" variant="outline-primary" @click.prevent="previousQuestion">Précedent</b-button>
+                    <b-button type="submit" class="mb-2" variant="primary">Découvrir mon expérience</b-button>
                 </div>
             </div>
         </b-form>
