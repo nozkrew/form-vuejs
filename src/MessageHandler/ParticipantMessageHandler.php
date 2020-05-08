@@ -22,7 +22,7 @@ class ParticipantMessageHandler implements MessageHandlerInterface{
          $createContact = new CreateContact([
              'email' => $message->getEmail(),
              'attributes' => ['PRENOM' => $message->getName()],
-             'listIds' => [$_ENV['SENDINBLUE_LIST_ID']]
+             'listIds' => [(int) $_ENV['SENDINBLUE_LIST_ID']]
          ]);
 
         try {
