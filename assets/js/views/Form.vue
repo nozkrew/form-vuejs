@@ -14,7 +14,7 @@
             </div>
              <!-- Si on est à la fin -->
             <div v-else>
-                <h1>Plus qu'une étape avant de découvrir ton expérience insolite et responsable</h1>
+                <h5>Plus qu'une étape avant de découvrir ton expérience insolite et responsable</h5>
                 <b-form-group label="Ton prénom" label-for="prenom">
                     <b-form-input
                     id="prenom"
