@@ -1,8 +1,9 @@
 <template>
-    <div>
-        <h1>Titre du quiz</h1>
-        <p>Dis moi quel voyageur tu es. Je te dirais quelle expérience insolite et écolo tu doit vivre!</p>
-        <b-button :to="{path: 'quiz'}" variant="primary" >C'est parti</b-button>
+    <div class="text-center">
+        <h1>Prêt ?</h1>
+        <h5>Dis moi quel voyageur tu es<br>
+        Je te dirai quelle expérience insolite et écolo tu dois vivre !</h5>
+        <b-button class="mx-auto mt-2" :to="{path: 'quiz'}" variant="primary" >C'est parti !</b-button>
     </div>
 </template>
 <script>
