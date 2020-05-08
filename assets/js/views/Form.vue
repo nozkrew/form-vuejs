@@ -19,7 +19,7 @@
                     id="prenom"
                     v-model="form.prenom"
                     required
-                    placeholder="Entre ton prenom"
+                    placeholder="Ton prénom"
                     ></b-form-input>
                 </b-form-group>
                 
@@ -28,7 +28,7 @@
                     id="email"
                     v-model="form.email"
                     required
-                    placeholder="Entre ton email"
+                    placeholder="Ton email"
                     ></b-form-input>
                 </b-form-group>
                 <b-alert :show=error variant="danger">{{messageError}}</b-alert>
