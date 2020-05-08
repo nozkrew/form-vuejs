@@ -4,7 +4,7 @@
 
             <!-- Si on est pas encore à la fin -->
             <div v-if="!end">
-                <h2>{{acutalQuestion}}</h2>
+                <h1>{{acutalQuestion}}</h1>
 
                 <b-form-radio v-for="choice in acutalChoices" :key="choice.value" v-model="form.selected[index]" :value="choice.value">{{choice.text}}</b-form-radio>
                 <div class="mt-4">

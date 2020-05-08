@@ -38,6 +38,11 @@ class ChoiceValue
      */
     private $description;
 
+    /**
+     * @ORM\Column(type="string", length=1000, nullable=true)
+     */
+    private $videoUrl;
+
     public function __construct()
     {
         $this->choices = new ArrayCollection();
@@ -104,6 +109,18 @@ class ChoiceValue
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getVideoUrl(): ?string
+    {
+        return $this->videoUrl;
+    }
+
+    public function setVideoUrl(?string $videoUrl): self
+    {
+        $this->videoUrl = $videoUrl;
 
         return $this;
     }
