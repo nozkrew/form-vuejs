@@ -32,15 +32,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-    .embed-responsive-item{
-        width: 60%;
-        height: 60%;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0;
-        right: 0;
-        text-align: center;
-    }
-</style>
