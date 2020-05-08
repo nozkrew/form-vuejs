@@ -61,7 +61,7 @@ class Answer
 
     public function __toString():string
     {
-        return "Réponses de ".$this->participant->getFirstname();
+        return "Réponse #".$this->id;
     }
 
     public function getId(): ?int

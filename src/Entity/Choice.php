@@ -52,7 +52,7 @@ class Choice
 
     public function __toString():string
     {
-        return (string) $this->value;
+        return (string) $this->choice . ' ('.$this->question.')';
     }
 
     public function getId(): ?int
