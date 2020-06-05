@@ -6,7 +6,6 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use App\Api\Controller\CreateAnswer;
 use App\Api\Controller\GetResult;
 
 /**
@@ -21,11 +20,7 @@ use App\Api\Controller\GetResult;
  *      },
  *      collectionOperations={
  *          "get",
- *          "post_answer"={
- *              "method"="POST",
- *              "path"="/answers",
- *              "controller"=CreateAnswer::class,
- *          }
+ *          "post"
  *      }
  * )
  * @ORM\Entity(repositoryClass="App\Repository\AnswerRepository")

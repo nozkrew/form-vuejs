@@ -6,7 +6,7 @@
             <div v-if="!end">
                 <h1>{{acutalQuestion}}</h1>
 
-                <b-form-radio v-for="choice in acutalChoices" :key="choice.value" v-model="form.selected[index]" :value="choice.value">{{choice.text}}</b-form-radio>
+                <b-form-radio v-for="choice in acutalChoices" :key="choice.value" v-model="form.selected[index]" :value="choice['@id']">{{choice.choice}}</b-form-radio>
                 <div class="mt-4">
                     <b-button v-show="index > 0" class="mb-2" type="buttton" variant="outline-primary" @click.prevent="previousQuestion">Précédent</b-button>
                     <b-button v-show="!end" class="mb-2" :disabled="typeof form.selected[index] === 'undefined' || form.selected[index] === null" type="buttton" variant="primary" @click.prevent="nextQuestion">Suivant</b-button>                
@@ -89,13 +89,6 @@ export default {
         .then(response => {
             this.questions = response.data['hydra:member']
         })
-        .then(response => this.questions.forEach(question  => 
-            axios.get('/api/questions/'+question.id+'/choices')
-            .then(question.choices = [])
-            .then(response  => response.data['hydra:member'].forEach(choice => {
-                question.choices.push({ text: choice.choice, value: choice['@id'] })
-            }))
-        ))
     },
     methods:{
         nextQuestion(){

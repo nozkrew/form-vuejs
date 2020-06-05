@@ -7,12 +7,15 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiSubresource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\QuestionRepository")
  * @ApiResource(
- *     collectionOperations={"get"},
- *     itemOperations={"get"}
+ *      collectionOperations={
+ *          "get" = {"normalization_context"={"groups"={"question"}}}
+ *      },
+ *      itemOperations={"get"}
  * )
  */
 class Question
@@ -26,12 +29,14 @@ class Question
 
     /**
      * @ORM\Column(type="string", length=1000)
+     * @Groups("question")
      */
     private $question;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Choice", mappedBy="question")
      * @ApiSubresource
+     * @Groups("question")
      */
     private $choices;
 

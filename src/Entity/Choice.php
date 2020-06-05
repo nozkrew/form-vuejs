@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ChoiceRepository")
@@ -25,6 +26,7 @@ class Choice
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups("question")
      */
     private $choice;
 
@@ -37,6 +39,7 @@ class Choice
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\ChoiceValue", inversedBy="choices")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups("question")
      */
     private $value;
 
