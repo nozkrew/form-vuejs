@@ -11,7 +11,7 @@ export default new VueRouter({
     routes:[
         { path: '/', name: 'main', component: Index},
         { path: '/quiz', name: 'quiz', component: Form},
-        { path: '/result/:id(\\d+)', name: 'result', component: Result},
+        { path: '/result/:percent(\\d+)', name: 'result', component: Result},
         { path: '/*', redirect: '/'}
     ]
 })

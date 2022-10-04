@@ -37,16 +37,15 @@ class Choice
     private $question;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\ChoiceValue", inversedBy="choices")
-     * @ORM\JoinColumn(nullable=false)
-     * @Groups("question")
-     */
-    private $value;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Answer", mappedBy="answers")
      */
     private $answers;
+
+    /**
+     * @ORM\Column(type="boolean")
+     * @Groups("question")
+     */
+    private $goodAnswer;
 
     public function __construct()
     {
@@ -87,18 +86,6 @@ class Choice
         return $this;
     }
 
-    public function getValue(): ?ChoiceValue
-    {
-        return $this->value;
-    }
-
-    public function setValue(?ChoiceValue $value): self
-    {
-        $this->value = $value;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Answer[]
      */
@@ -123,6 +110,18 @@ class Choice
             $this->answers->removeElement($answer);
             $answer->removeAnswer($this);
         }
+
+        return $this;
+    }
+
+    public function getGoodAnswer(): ?bool
+    {
+        return $this->goodAnswer;
+    }
+
+    public function setGoodAnswer(bool $goodAnswer): self
+    {
+        $this->goodAnswer = $goodAnswer;
 
         return $this;
     }

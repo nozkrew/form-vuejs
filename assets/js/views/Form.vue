@@ -6,7 +6,7 @@
             <div v-if="!end">
                 <h1>{{acutalQuestion}}</h1>
 
-                <b-form-radio v-for="choice in acutalChoices" :key="choice.value" v-model="form.selected[index]" :value="choice['@id']">{{choice.choice}}</b-form-radio>
+                <b-form-radio v-for="choice in acutalChoices" :key="choice.value" v-model="form.selected[index]" :value="choice.goodAnswer">{{choice.choice}}</b-form-radio>
                 <div class="mt-4">
                     <b-button v-show="index > 0" class="mb-2" type="buttton" variant="outline-primary" @click.prevent="previousQuestion">Précédent</b-button>
                     <b-button v-show="!end" class="mb-2" :disabled="typeof form.selected[index] === 'undefined' || form.selected[index] === null" type="buttton" variant="primary" @click.prevent="nextQuestion">Suivant</b-button>                
@@ -14,7 +14,7 @@
             </div>
              <!-- Si on est à la fin -->
             <div v-else>
-                <h5>Plus qu'une étape avant de découvrir ton expérience insolite et responsable</h5>
+                <h5>Plus qu'une étape avant de découvrir ton résultat</h5>
                 <b-form-group label="Ton prénom" label-for="prenom">
                     <b-form-input
                     id="prenom"
@@ -35,7 +35,7 @@
                 <b-alert :show=error variant="danger">{{messageError}}</b-alert>
                 <div class="mt-4">
                     <b-button type="buttton" class="mb-2" variant="outline-primary" @click.prevent="previousQuestion">Précédent</b-button>
-                    <b-button type="submit" class="mb-2" variant="primary">Découvrir mon expérience</b-button>
+                    <b-button type="submit" class="mb-2" variant="primary">Voir le résultat</b-button>
                 </div>
             </div>
         </b-form>
@@ -103,14 +103,16 @@ export default {
                 firstname: this.form.prenom,
                 email: this.form.email
             })
-            //enregistre les réponses
-            .then(response => axios.post('/api/answers', {
-                                    date: new Date(),
-                                    answers: this.form.selected,
-                                    participant: response.data['@id']
-                                })
-                                .then(response => this.$router.push({ name:'result', params: { id: response.data.id } }))
-            )
+            .then(response => {
+              let count = 0
+              this.form.selected.forEach((value, index) => {
+                if(value){
+                  count++
+                }
+              })
+              let percent = (count / this.form.selected.length) * 100
+              this.$router.push({ name:'result', params: { percent: percent } })
+            })
             .catch(error => {
                 this.error = true
                 this.messageError = error.response.data['hydra:description']

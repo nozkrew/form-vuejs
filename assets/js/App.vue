@@ -1,9 +1,7 @@
 <template>
     <div>
-        <b-container>
-            <b-card class="mt-2" bg-variant="transparent">
+        <b-container class="mt-3">
                 <router-view></router-view>
-            </b-card>
         </b-container>
     </div>
 </template>

@@ -24,11 +24,6 @@ class ChoiceValue
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Choice", mappedBy="value")
-     */
-    private $choices;
-
-    /**
      * @ORM\Column(type="string", length=255)
      */
     private $title;
@@ -43,11 +38,6 @@ class ChoiceValue
      */
     private $videoUrl;
 
-    public function __construct()
-    {
-        $this->choices = new ArrayCollection();
-    }
-
     public function __toString()
     {
         return $this->title;
@@ -56,37 +46,6 @@ class ChoiceValue
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection|Choice[]
-     */
-    public function getChoices(): Collection
-    {
-        return $this->choices;
-    }
-
-    public function addChoice(Choice $choice): self
-    {
-        if (!$this->choices->contains($choice)) {
-            $this->choices[] = $choice;
-            $choice->setValue($this);
-        }
-
-        return $this;
-    }
-
-    public function removeChoice(Choice $choice): self
-    {
-        if ($this->choices->contains($choice)) {
-            $this->choices->removeElement($choice);
-            // set the owning side to null (unless already changed)
-            if ($choice->getValue() === $this) {
-                $choice->setValue(null);
-            }
-        }
-
-        return $this;
     }
 
     public function getTitle(): ?string

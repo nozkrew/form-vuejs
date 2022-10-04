@@ -22,12 +22,14 @@ class ParticipantMessageHandler implements MessageHandlerInterface{
          $createContact = new CreateContact([
              'email' => $message->getEmail(),
              'attributes' => ['PRENOM' => $message->getName()],
-             'listIds' => [(int) $_ENV['SENDINBLUE_LIST_ID']]
+             'listIds' => [(int) $_ENV['SENDINBLUE_LIST_ID']],
+             'updateEnabled' => true,
          ]);
 
         try {
             $apiInstance->createContact($createContact);
         } catch (\Exception $e) {
+            dd($e);
             echo 'Exception when calling AccountApi->getAccount: ', $e->getMessage(), PHP_EOL;
         }
     }

@@ -1,18 +1,17 @@
 // customize some Bootstrap variables
-$primary: #ffcc05;
-$body-color: white;
+$primary: #B45B56;
+$body-color: #635554;
 $font-size-base:1.2rem;
 
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-vue/src/index.scss";
 
+@import url('https://fonts.googleapis.com/css?family=Cormorant SC&display=swap');
+
 body{
-    background: url('../../public/images/fjru-duiczUIYUgt.jpeg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+
+    background-color: #FFEFEF;
 
     font-size: 16px;
     font-weight: 400;
@@ -20,7 +19,7 @@ body{
 }
 
 h1{
-    font-family: "Playfair Display",serif;
+    font-family: "Cormorant SC",serif;
     font-weight: 700;
     line-height: 1.22em;
     font-size: 8vmin;
