@@ -110,7 +110,7 @@ export default {
                   count++
                 }
               })
-              let percent = (count / this.form.selected.length) * 100
+              let percent = Math.round((count / this.form.selected.length) * 100)
               this.$router.push({ name:'result', params: { percent: percent } })
             })
             .catch(error => {
