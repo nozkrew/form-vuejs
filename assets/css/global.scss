@@ -7,22 +7,27 @@ $font-size-base:1.2rem;
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-vue/src/index.scss";
 
-@import url('https://fonts.googleapis.com/css?family=Cormorant SC&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Cormorant+SC%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CKristi%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CArimo%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CRoboto%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&display=auto&ver=6.0.2);
+
+$cormorant-sc: "Cormorant SC",serif;
+$arimo: 'Arimo', sans-serif;
 
 body{
 
-    background-color: #FFEFEF;
+    //background-color: #FFEFEF;
 
     font-size: 16px;
     font-weight: 400;
     line-height: 27px;
+    font-family: $arimo;
 }
 
 h1{
-    font-family: "Cormorant SC",serif;
-    font-weight: 700;
+    font-family: $cormorant-sc;
+    font-weight: 400;
     line-height: 1.22em;
     font-size: 8vmin;
+    color: $primary;
 }
 
 .form-control{
