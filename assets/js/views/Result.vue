@@ -1,5 +1,5 @@
 <template>
-    <div class="text-center">
+    <div class="text-center mb-4">
         <h1 class="mb-3">Tu es multipotentiel à {{percent}}%</h1>
 
         <div v-if="percent >= 50">
@@ -12,7 +12,10 @@
 
           <p>Mais SPOILET ALERT : la multipotentialité n'est ni un problème, ni une maladie ni un défaut. C'est simplement un fonctionnement différent qu'il faut comprendre, appréhender et respecter ! Rien ne sert de lutter contre ta vraie nature 😉</p>
 
-          <p>Si tu as des questions, n'hésite pas à m'écrire directement à <a href="mailto:contact@unautrehorizon.fr">contact@unautrehorizon.fr</a></p>
+          <p>Si tu te reconnais en tant que multipotentiel, que tu souhaites mieux te comprendre, apprendre à faire des choix et avoir une vie plus stable, tu peux rejoindre la formation : <a href="https://formations.unautrehorizon.fr/4-multipotentiel-apprendre-a-faire-les-bons-choix-pour-savoir-ou-tu-vas-et-enfin-avoir-une-vie-stable?coupon=P8UJ3D-QZ" target="_blank">MULTIPOTENTIEL : Apprendre à faire les bons choix pour savoir où tu vas et enfin avoir une vie stable</a></p>
+
+          <p><b>Jusqu'au dimanche 16 octobre, minuit, elle est au prix promotionnel de 197€ (<strike>297,00€</strike>)</b></p>
+
         </div>
         <div v-else>
           <div class="mx-auto" style="width: 200px">
